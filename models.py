@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -97,7 +97,7 @@ class order(models.Model):
         db_column="order_items_id",
     )
     user_id = models.ForeignKey(
-        user,
+        User,
         to_field="id",
         on_delete=models.CASCADE,
         db_column="user_id",
